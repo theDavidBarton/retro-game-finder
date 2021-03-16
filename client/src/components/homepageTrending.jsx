@@ -40,11 +40,14 @@ export default function Trending({ data, value }) {
 
   const getPlatform = () => {
     const platformArray = detailsData.platforms;
-    const platform = platformArray.map((platformElement, index) => (
-      <div className='badge badge-dark platform-badge-margin' key={index + 1}>
-        {platformElement.platform.name}
-      </div>
-    ));
+    let platform;
+    if (platformArray.length > 0) {
+      platform = platformArray.map((platformElement, index) => (
+        <div className='badge badge-dark platform-badge-margin' key={index + 1}>
+          {platformElement.platform.name}
+        </div>
+      ));
+    }
     return platform;
   };
 
@@ -66,7 +69,7 @@ export default function Trending({ data, value }) {
   return (
     <div className='col-md-6'>
       <a href={selectedVideogameFn()} className='text-decoration-none'>
-        <div className='card bg-dark text-white border-0'>
+        <div className='card text-black border-0'>
           <div>
             <div className='img-zoom-container card-background bg-secondary'>
               <div className='img-zoom'>
@@ -79,21 +82,21 @@ export default function Trending({ data, value }) {
             <div className='badge-pill badge-dark display-5 position-absolute badge-position'>
               #<strong>{getRank()}</strong>
             </div>
-            <h2 className='position-absolute h2-position'>
+            <h2 className='position-absolute h2-position text-light'>
               {getTitle().length >= 30 ? getTitle().substring(0, 30) + '...' : getTitle().substring(0, 30)}
             </h2>
             <div className='position-absolute platform-badge-position'>{detailsData ? getPlatform() : null}</div>
             <div>
               {detailsData ? (
-                <Fragment>{getOverview().substring(0, 350) + '...'}</Fragment>
+                <Fragment>{getOverview().substring(0, 450) + '...'}</Fragment>
               ) : (
                 <Fragment>
                   {/* skeleton loading for overviews */}
-                  <p className='w-100 mb-2 text-secondary bg-secondary'>&zwnj;</p>
-                  <p className='w-50 mb-2 text-secondary bg-secondary'>&zwnj;</p>
-                  <p className='w-75 mb-2 text-secondary bg-secondary'>&zwnj;</p>
-                  <p className='w-100 mb-2 text-secondary bg-secondary'>&zwnj;</p>
-                  <p className='w-50 mb-2 text-secondary bg-secondary'>&zwnj;</p>
+                  <p className='w-100 mb-1 text-secondary bg-secondary'>&zwnj;</p>
+                  <p className='w-50 mb-1 text-secondary bg-secondary'>&zwnj;</p>
+                  <p className='w-75 mb-1 text-secondary bg-secondary'>&zwnj;</p>
+                  <p className='w-100 mb-1 text-secondary bg-secondary'>&zwnj;</p>
+                  <p className='w-50 mb-0 text-secondary bg-secondary'>&zwnj;</p>
                 </Fragment>
               )}
             </div>

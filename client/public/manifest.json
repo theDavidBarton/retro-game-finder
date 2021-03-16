@@ -1,6 +1,6 @@
 {
-  "short_name": "Video Games on RAWG",
-  "name": "Video Games on RAWG React App",
+  "short_name": "Retro Game finder",
+  "name": "Retro Game finder",
   "icons": [
     {
       "src": "favicon.ico",
