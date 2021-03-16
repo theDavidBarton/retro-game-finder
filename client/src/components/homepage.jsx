@@ -34,7 +34,7 @@ export default function Homepage() {
   }, [getRawgApi]);
 
   return (
-    <main className='bg-dark py-5'>
+    <main className='py-5'>
       <article className='container'>
         <div className='row'>
           {topVideogameCount.map(videogames =>

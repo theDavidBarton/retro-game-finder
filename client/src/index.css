@@ -9,6 +9,7 @@
   font-family: 'ArcadeClassic', sans-serif;
   letter-spacing: 2px;
   word-spacing: 0.3em;
+  line-height: 1.15;
 }
 
 h1,
@@ -27,6 +28,10 @@ h5 {
 
 a.text-warning:hover {
   color: #e6f8e3 !important;
+}
+
+.text-black {
+  color: #000000 !important;
 }
 
 .badge-warning {
@@ -87,18 +92,30 @@ a.text-warning:hover {
 /* trendingVideogame */
 .card-background {
   border-width: thick;
-  border-radius: 0px 200px 0px 0px;
-  border-right: 5px solid #ffc107;
+  border-left: 5px solid #83ff9f;
+}
+
+.card-body > div:nth-child(4) {
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 0;
+  word-spacing: 0;
 }
 
 .card-img-top {
+  top: -3rem;
   width: -webkit-fill-available;
   object-fit: cover;
 }
 
+@media (max-width: 720px) {
+  .card-img-top {
+    top: 0;
+  }
+}
+
 .h2-position {
   left: 20px;
-  top: 100px;
+  top: 70px;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
@@ -108,8 +125,9 @@ a.text-warning:hover {
 }
 
 .platform-badge-position {
+  padding-left: 20px;
   right: 20px;
-  top: 150px;
+  top: 128px;
 }
 
 .platform-badge-margin {
@@ -405,6 +423,12 @@ a.text-warning:hover {
 /* reviews */
 .long-content {
   overflow: hidden;
+}
+
+.long-content > p {
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 0;
+  word-spacing: 0;
 }
 
 /* misc. */
