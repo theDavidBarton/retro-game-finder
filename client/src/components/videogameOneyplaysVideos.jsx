@@ -18,7 +18,7 @@ export default function OneyplaysVideos({ data }) {
       {data.oneyplays.length > 0 ? (
         <section id='oneyplaysGallery' className='col'>
           <header id='oneyplaysGalleryTop' className='row mt-3 px-3'>
-            <h4>On-ey Plays:</h4>
+            <h4>Oney Plays:</h4>
             <p className='w-100'>
               This title appeared on{' '}
               <a target='_blank' rel='noopener noreferrer' href='https://www.youtube.com/channel/UCO1ITICo8MLHGAXR1uzFwjA'>
