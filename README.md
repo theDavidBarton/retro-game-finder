@@ -4,6 +4,10 @@ A retro game finder site powered by RAWG.io data.
 
 The project is based on my previous [video-games-on-RAWG-react-app](https://github.com/theDavidBarton/video-games-on-RAWG-react-app) project.
 
+## Reusing this project without forking
+
+⚠️ As I see more-and-more are using my application as an inspiration for their projects which is cool. 😊 **I want to ask you** to (1) make sure that you comply with the [MIT](#license) license in case you are copy-pasting parts of it (means you are not forking, so the natural connection is cut between your work and the original source code) and also that (2) please alter the User-Agent (`{ 'User-Agent': 'retro-game-finder (GitHub)' }`) in your server implementation so it points to your app, not mine (it is not nice to introduce yourself as me when you are calling [multiple APIs](#credits) that are implemented in the code) ☝️ ( (+3) if you'd give me credits as my project was an "inspiration" for yours that would be much appreciated) Thank you! 🙏
+
 ## a React.Js app with Express backend
 
 An experimental project with the **RAWG** api and **Archive.org's** search api.
