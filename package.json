@@ -1,6 +1,6 @@
 {
   "name": "retro-game-finder-express-server",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "server.js",
   "license": "MIT",
   "dependencies": {
@@ -14,6 +14,6 @@
     "heroku-postbuild": "cd client && yarn && yarn run build"
   },
   "engines": {
-    "node": "12.x"
+    "node": "16.x"
   }
 }
