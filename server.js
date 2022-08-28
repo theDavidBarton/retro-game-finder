@@ -3,7 +3,6 @@
 const express = require('express');
 const request = require('request');
 const compression = require('compression');
-const path = require('path');
 const oneyPlays = require('oneyplays-api');
 const userAgent = { 'User-Agent': 'retro-game-finder (GitHub)' };
 const rawgApiKey = process.env.RAWG_API_KEY;
@@ -123,16 +122,7 @@ const apiCall = async options => {
   try {
     const app = express();
     const port = process.env.PORT || 5000;
-
     app.use(compression());
-    app.use(express.static(path.join(__dirname, 'client/build')));
-    // required to serve SPA on heroku production without routing problems; it will skip only 'api' calls
-    if (process.env.NODE_ENV === 'production') {
-      app.get(/^((?!(api)).)*$/, (req, res) => {
-        res.set('Cache-Control', 'public, max-age=31536001');
-        res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-      });
-    }
 
     // providing a constant endpoint for trending videogames
     app.get('/api/trending', async (req, res) => {

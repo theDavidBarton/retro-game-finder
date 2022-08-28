@@ -7,11 +7,13 @@ export default function Search() {
   const [dropdownIsopened, setDropdownIsopened] = useState(false);
   const [keyword, setKeyword] = useState('');
 
+  const domain = process.env.NODE_ENV === 'production' ? 'https://retro-game-finder-backend.onrender.com' : '';
+
   useEffect(() => {
     async function getRawgApi() {
       if (keyword !== '') {
         try {
-          const response = await fetch(`/api/videogameAutocomplete?q=${keyword.toLowerCase()}`);
+          const response = await fetch(`${domain}/api/videogameAutocomplete?q=${keyword.toLowerCase()}`);
           const json = await response.json();
           setData(json);
           setDataIsReady(true);
@@ -21,7 +23,7 @@ export default function Search() {
       }
     }
     getRawgApi();
-  }, [keyword]);
+  }, [keyword, domain]);
 
   const setKeywordInInput = event => {
     setKeyword(event.target.value);
