@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const cors = require('cors');
 const request = require('request');
 const compression = require('compression');
 const oneyPlays = require('oneyplays-api');
@@ -123,6 +124,7 @@ const apiCall = async options => {
     const app = express();
     const port = process.env.PORT || 5000;
     app.use(compression());
+    app.use(cors({ origin: 'https://retro-game-finder-frontend.onrender.com' }));
 
     // providing a constant endpoint for trending videogames
     app.get('/api/trending', async (req, res) => {
